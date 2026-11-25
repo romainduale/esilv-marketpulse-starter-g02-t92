@@ -2,39 +2,39 @@
 
 ## Student
 
-- Name: Roman Cianci
-- GitHub: @RomanCianci
+* Name: Roman Cianci
+* GitHub: @RomanCianci
 
 ## Contribution
 
-- Branch: feature/display-market-metadata
-- Branch: feature/yahoo-provider
-- Main commits:
-  - b5e3bdf
-  - 5f4261a
-  - 419eda4
-  - 8b6ab2a
-  - e6d7665
-- Pull Request: #1
-- Reviewed Pull Request: #3
+* Branch: feature/display-market-metadata
+* Branch: feature/yahoo-provider
+* Main commits:
+
+  * b5e3bdf
+  * 5f4261a
+  * 419eda4
+  * 8b6ab2a
+  * e6d7665
+
+\- Pull Requests: #1, #6
+
+\- Reviewed Pull Requests: #3, #4
 
 ## Work completed
 
-- Display market observation dates.
-- Integrate Yahoo Finance.
-- Compare AAPL and SP500 over one month.
-- Integrate the shared analytics module.
-- Resolve the analytics merge conflict.
-- Successfully execute all six analytics checks.
+\- Implement the complete OHLCV data format.
 
-## Main difficulty
+\- Implement the Yahoo symbol mapping.
 
-Resolving the merge conflict and adapting the Yahoo
-Finance integration to the shared analytics module.
+\- Implement fetch\_prices\_for\_ticker().
+
+\- Validate Yahoo data types and unknown tickers.Main difficulty
 
 ## Evidence
 
-- 01_pull_request.png
-- 02_code_review.png
-- 03_yahoo_market_data.png
-- 04_instrument_benchmark.png
+* 01\_pull\_request.png
+* 02\_code\_review.png
+* 03\_yahoo\_market\_data.png
+* 04\_instrument\_benchmark.png
+
