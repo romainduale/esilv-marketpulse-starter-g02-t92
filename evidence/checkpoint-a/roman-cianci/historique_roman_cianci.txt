@@ -1,0 +1,146 @@
+git clone https://github.com/romainduale/esilv-marketpulse-starter-g02-t67.git
+git status
+git log --oneline -5
+python src/main.py
+cd C:\Users\romsc\OneDrive - De Vinci\A4\IF\Python\esilv-marketpulse-starter-g02-t67
+git status
+git log --oneline -5
+python src/main.py
+git branch
+git status
+git switch -c feature/display-observation-dates
+git branch
+src/main.py
+python src/main.py
+git status
+git diff
+git add src/main.py
+git diff --staged
+git commit -m "feat: display first and last observation dates"
+git status
+git log --oneline -5
+git log --oneline --graph --decorate --all
+git diff main..feature/display-observation-dates
+git switch main
+git branch
+git merge feature/display-observation-dates
+git log --oneline --graph --decorate --all
+python src/main.py
+git branch
+git branch --merged
+git log --oneline --graph --decorate --all
+git branch -d feature/display-observation-dates
+git status
+git log --oneline --graph --decorate --all
+python src/main.py
+git diff main..<branch>
+git log --oneline --graph --decorate --all
+git log --oneline -- src/main.py
+git show <commit-id> -- src/main.py
+cd evidence
+mkdr roman-cianci
+mkdir roman-cianci
+git switch main
+git status
+git branch archive/td04-local
+git remote get-url origin
+git switch main
+git push origin main
+git switch main
+git status
+git fetch origin
+git reset --hard origin/main
+git status
+git rev-parse HEAD
+git rev-parse origin/main
+python src/main.py
+git remote -v
+git remote get-url origin
+git switch main
+git status
+git rev-parse HEAD
+git rev-parse origin/main
+git switch -c feature/display-market-metadata
+git branch
+git status
+git diff
+python src/main.py
+git add src/main.py
+git diff --staged
+git commit -m "feat: display market metadata"
+git status
+git log --oneline -5
+git push -u origin feature/display-market-metadata
+git push
+git status
+git diff
+git add <file>
+git commit -m "<meaningful message>"
+git push
+git branch -vv
+git branch -r
+git branch -a
+git diff main..HEAD
+git log --oneline main..HEAD
+git status
+git branch
+git remote get-url origin
+git status
+git log --oneline
+git diff main..HEAD
+git diff
+python src/main.py
+git status
+git log --oneline -5
+git branch
+git branch --merged
+git log --oneline --graph --decorate --all
+evidence/checkpoint-a/roman-cianci/
+New-Item -ItemType Directory -Force -Path "evidence/checkpoint-a/roman-cianci"
+git show --stat 1446980
+git show 1446980 -- src/main.py
+python src/main.py
+git status
+git add src/main.py
+git commit -m "fix: display observation dates for both assets"
+git status
+git branch -vv
+git remote get-url origin
+git log --oneline -5
+git switch main
+git pull --ff-only origin main
+git switch -c feature/improve-market-summary
+python src/main.py
+git add src/main.py
+git commit -m "feat: improve market summary metadata"
+git push -u origin feature/improve-market-summary
+$path = "evidence/checkpoint-a/roman-cianci"
+New-Item -ItemType Directory -Force -Path $path | Out-Null
+Get-Content "$path/README.md"
+git add evidence/checkpoint-a/roman-cianci/
+git commit -m "docs: add Checkpoint A evidence"
+git status
+Get-ChildItem evidence/checkpoint-a/roman-cianci/
+git remote set-url origin https://github.com/romainduale/esilv-marketpulse-starter-g02-t92.git
+git remote -v
+git status
+git switch feature/display-market-metadata
+git status
+git log main..HEAD --oneline
+git diff main..HEAD -- src/main.py
+git status
+git branch
+git push -u origin feature/display-market-metadata
+git switch feature/improve-market-summary
+git log -2 --oneline
+git show --stat --oneline HEAD
+git show --stat --oneline HEADgit push -u origin feature/improve-market-summary
+git push -u origin feature/improve-market-summary
+cd evidence
+cd check-point-a
+cd checkpoint-a
+cd roman-cianci
+history > historique_roman_cianci.txt
+cd C:\Users\romsc\OneDrive - De Vinci\A4\IF\Python\esilv-marketpulse-starter-g02-t92
+$source = (Get-PSReadLineOption).HistorySavePath
+Get-Content -LiteralPath $source -Encoding UTF8 | Set-Content -Path "historique_roman_cianci.txt" -Encoding UTF8
