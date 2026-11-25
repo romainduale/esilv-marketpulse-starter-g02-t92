@@ -1,0 +1,16 @@
+  495  git push -u origin feature/display-market-metadata
+  496  git remote -v\ngit fetch origin\ngit branch -a\ngit log --oneline --graph --decorate --all -20
+  497  git remote set-url origin https://github.com/romainduale/esilv-marketpulse-starter-g02-t92.git
+  498  git remote -v\ngit fetch origin\ngit log --oneline --graph --decorate --all -20
+  499  git log --oneline origin/main..HEAD\ngit diff origin/main...HEAD
+  500  git fetch origin --prune\ngit ls-remote --heads origin
+  501  git branch archive/td05-local
+  502  git switch main\ngit merge --ff-only origin/main
+  503  git status
+  504  git reset --hard origin/main
+  505  git rev-parse HEAD\ngit rev-parse origin/main
+  506  git switch -c feature/display-market-currency-romain
+  507  python3 src/main.py\ngit diff\ngit add src/main.py\ngit diff --staged\ngit commit -m "feat: display market metadata"\ngit status\ngit log --oneline -5
+  508  git push -u origin feature/display-market-currency-romain
+  509  cd "$(git rev-parse --show-toplevel)"
+  510  mkdir -p evidence/checkpoint-a/Romain_Duale
