@@ -1,6 +1,6 @@
 ﻿# Checkpoint A — Roman Cianci
 
-**GitHub username:** roman-cianci
+**GitHub username:** RomanCianci
 **Project:** MarketPulse
 **Checkpoint:** A (TD01-TD04)
 
@@ -29,3 +29,4 @@
 ## Key takeaway
 
 Feature branches isolate development from main. Commits preserve changes, and merging integrates completed work into the main branch.
+

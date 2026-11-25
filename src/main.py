@@ -1,6 +1,14 @@
-from pathlib import Path
+﻿from pathlib import Path
 import csv
 import json
+from analytics import (
+    align_series,
+    calculate_period_return,
+    calculate_base_100,
+    calculate_relative_performance
+)
+
+from providers.yahoo_provider import load_yahoo_prices
 
 
 DATA_DIR = Path("data/sample")
@@ -10,7 +18,7 @@ DATA_DIR = Path("data/sample")
 # Parsing YAML is optional and is not required by the 18-hour lab sequence.
 LOOKBACK_LABEL = "1 month"
 INTERVAL_LABEL = "Daily"
-PROVIDER_LABEL = "CSV (local sample files)"
+PROVIDER_LABEL = "Yahoo Finance"
 
 def get_first_date(prices):
     return prices[0]["date"]
@@ -36,18 +44,19 @@ def filter_prices(prices, ticker):
 
 def main():
     instruments = load_instruments()
-    prices = load_prices()
+
 
     instrument = instruments["instrument"]
     benchmark = instruments["benchmark"]
 
-    instrument_prices = filter_prices(prices, instrument["ticker"])
-    benchmark_prices = filter_prices(prices, benchmark["ticker"])
+    instrument_prices = load_yahoo_prices(instrument["ticker"])
+    benchmark_prices = load_yahoo_prices(benchmark["ticker"])
 
     instrument_latest = instrument_prices[-1]
     benchmark_latest = benchmark_prices[-1]
 
     print("=== MarketPulse ===")
+
     print()
     print("Instrument")
     print(f"{instrument['ticker']} - {instrument['name']}")
@@ -71,7 +80,25 @@ def main():
     print(f"\n{benchmark['ticker']}: {len(benchmark_prices)}")
     print(f"First date: {get_first_date(benchmark_prices)}")
     print(f"Last date: {get_last_date(benchmark_prices)}")
+    i, b = align_series(instrument_prices, benchmark_prices)
+
+    if len(i) < 2:
+        raise ValueError("Not enough common dates")
+
+    ri = calculate_period_return(i)
+    rb = calculate_period_return(b)
+
+    print("\n=== Performance Comparison ===")
+    print(f"Common observations: {len(i)}")
+    print(f"Common period: {i[0]['date']} to {i[-1]['date']}")
+    print(f"Instrument return: {ri:.2f}%")
+    print(f"Benchmark return: {rb:.2f}%")
+    print(f"Relative performance: {calculate_relative_performance(ri, rb):.2f} pp")
+    print(f"Instrument base 100: {calculate_base_100(i)[-1]['value']:.2f}")
+    print(f"Benchmark base 100: {calculate_base_100(b)[-1]['value']:.2f}")
 
 
 if __name__ == "__main__":
     main()
+
+
