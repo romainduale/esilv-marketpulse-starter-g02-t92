@@ -8,7 +8,7 @@ from analytics import (
     calculate_relative_performance
 )
 
-from providers.yahoo_provider import load_yahoo_prices
+from providers.yahoo_provider import fetch_prices_for_ticker
 
 
 DATA_DIR = Path("data/sample")
@@ -49,8 +49,8 @@ def main():
     instrument = instruments["instrument"]
     benchmark = instruments["benchmark"]
 
-    instrument_prices = load_yahoo_prices(instrument["ticker"])
-    benchmark_prices = load_yahoo_prices(benchmark["ticker"])
+    instrument_prices = fetch_prices_for_ticker(instrument["ticker"])
+    benchmark_prices = fetch_prices_for_ticker(benchmark["ticker"])
 
     instrument_latest = instrument_prices[-1]
     benchmark_latest = benchmark_prices[-1]
@@ -100,5 +100,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
