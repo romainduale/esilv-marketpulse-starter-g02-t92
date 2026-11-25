@@ -18,6 +18,7 @@ DATA_DIR = Path("data/sample")
 # Parsing YAML is optional and is not required by the 18-hour lab sequence.
 LOOKBACK_LABEL = "1 month"
 INTERVAL_LABEL = "Daily"
+PROVIDER_LABEL = "CSV (local sample files)"
 
 def get_first_date(prices):
     return prices[0]["date"]
@@ -67,6 +68,7 @@ def main():
     print()
     print(f"Period: {LOOKBACK_LABEL}")
     print(f"Interval: {INTERVAL_LABEL}")
+    print(f"Provider: {PROVIDER_LABEL}")
     print()
     print("\nObservations")
     print(f"\n{instrument['ticker']}: {len(instrument_prices)}")
