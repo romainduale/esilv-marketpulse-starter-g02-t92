@@ -1,11 +1,11 @@
-from pathlib import Path
+﻿from pathlib import Path
 import csv
 import json
 from analytics import (
-    align_prices,
-    period_return,
-    base_100,
-    relative_performance
+    align_series,
+    calculate_period_return,
+    calculate_base_100,
+    calculate_relative_performance
 )
 
 from providers.yahoo_provider import load_yahoo_prices
@@ -75,17 +75,24 @@ def main():
     print(f"\n{benchmark['ticker']}: {len(benchmark_prices)}")
     print(f"First date: {get_first_date(benchmark_prices)}")
     print(f"Last date: {get_last_date(benchmark_prices)}")
-    dates, i, b = align_prices(instrument_prices, benchmark_prices)
+    i, b = align_series(instrument_prices, benchmark_prices)
+
+    if len(i) < 2:
+        raise ValueError("Not enough common dates")
+
+    ri = calculate_period_return(i)
+    rb = calculate_period_return(b)
 
     print("\n=== Performance Comparison ===")
-    print(f"Common observations: {len(dates)}")
-    print(f"Common period: {dates[0]} to {dates[-1]}")
-    print(f"Instrument return: {period_return(i):.2%}")
-    print(f"Benchmark return: {period_return(b):.2%}")
-    print(f"Relative performance: {relative_performance(i, b)*100:.2f} pp")
-    print(f"Instrument base 100: {base_100(i)[-1]:.2f}")
-    print(f"Benchmark base 100: {base_100(b)[-1]:.2f}")
+    print(f"Common observations: {len(i)}")
+    print(f"Common period: {i[0]['date']} to {i[-1]['date']}")
+    print(f"Instrument return: {ri:.2f}%")
+    print(f"Benchmark return: {rb:.2f}%")
+    print(f"Relative performance: {calculate_relative_performance(ri, rb):.2f} pp")
+    print(f"Instrument base 100: {calculate_base_100(i)[-1]['value']:.2f}")
+    print(f"Benchmark base 100: {calculate_base_100(b)[-1]['value']:.2f}")
 
 
 if __name__ == "__main__":
     main()
+
