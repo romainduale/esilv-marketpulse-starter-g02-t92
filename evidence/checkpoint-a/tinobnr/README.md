@@ -13,12 +13,3 @@
 - 02_git_status_log.png
 - 03_branch_merge.png
 
-## Contribution
-
-- Commits on TINO:
-  - a302ef8 feat: add reusable market summary
-  - 4efb2d5 feat: display first and last observation dates
-
-## Main difficulty
-
-<one sentence, in your own words>
