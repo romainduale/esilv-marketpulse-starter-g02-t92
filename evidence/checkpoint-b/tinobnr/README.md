@@ -1,24 +1,31 @@
-# Checkpoint A — Tino Bonnier
+# Checkpoint B — Tino Bonnier
 
+## Student
+
+- Name: Tino Bonnier
 - GitHub: @tinobnr
-- Branch: TINO
-
-## Work completed
-- Added a reusable market summary (TD02/TD03).
-- Created feature/display-observation-dates, displayed first and last
-  observation dates, merged it into TINO with a fast-forward (TD04).
-
-## Evidence
-- 01_terminal_python.png
-- 02_git_status_log.png
-- 03_branch_merge.png
 
 ## Contribution
 
-- Commits on TINO:
-  - a302ef8 feat: add reusable market summary
-  - 4efb2d5 feat: display first and last observation dates
+- Branch: feature/display-provider-label
+- Commit: b408e3e
+- Pull Request: #3 (reviewed and approved by @RomanCianci, merged)
+- Reviewed Pull Request: #11 (post-merge review of the Bloomberg provider)
+
+## Work completed
+
+- Displayed the data provider label in the terminal output.
+- Ran the analytics, Yahoo Finance and Bloomberg tests on the shared main.
+- Retrieved AAPL and S&P 500 from Yahoo Finance over 1 month, daily.
 
 ## Main difficulty
 
-The review was hard sometimes understanding the code written by someone else can take time because he has other methods and a totally different way of coding.
+Reviewing someone else's code takes time: they use other methods
+and a different way of coding.
+
+## Evidence
+
+- 01_pull_request.png
+- 02_code_review.png
+- 03_yahoo_market_data.png
+- 04_instrument_benchmark.png
